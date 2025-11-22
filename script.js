@@ -26,17 +26,17 @@ function registerUser() {
 
 // Login
 function login() {
-  const phone = document.getElementById("phone").value.trim();
+  const user = document.getElementById("user").value.trim();
   const pass = document.getElementById("pass").value.trim();
 
-  if (!validarCampos(phone, pass)) return;
+  if (!validarCampos(user, pass, "dummy")) return; // phone não necessário no login
 
-  const savedPhone = localStorage.getItem("vast_phone");
+  const savedUser = localStorage.getItem("vast_user");
   const savedPass = localStorage.getItem("vast_pass");
 
-  if (phone === savedPhone && pass === savedPass) {
+  if (user === savedUser && pass === savedPass) {
     window.location.href = "https://sites.google.com/view/vastbitloud";
   } else {
-    alert("Telefone ou senha incorretos!");
+    alert("Usuário ou senha incorretos!");
   }
 }
